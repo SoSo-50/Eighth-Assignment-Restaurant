@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ap.restaurant.restaurant.controllers.RegisterController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;" styleClass="login-container">
+
+    <Label text="ثبت نام کاربر جدید" styleClass="label-title"/>
+
+    <TextField fx:id="usernameField" promptText="نام کاربری"/>
+    <PasswordField fx:id="passwordField" promptText="رمز عبور"/>
+    <PasswordField fx:id="confirmPasswordField" promptText="تکرار رمز عبور"/>
+    <TextField fx:id="emailField" promptText="ایمیل (اختیاری)"/>
+
+    <Button text="ثبت نام" onAction="#handleRegister" styleClass="button"/>
+    <Button text="بازگشت به ورود" onAction="#switchToLogin" styleClass="button-danger"/>
+
+    <Label fx:id="errorLabel" styleClass="label-error"/>
+</VBox>

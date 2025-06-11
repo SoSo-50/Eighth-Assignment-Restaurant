@@ -1,0 +1,191 @@
+/* فونت‌های پروژه */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Sahel:wght@400;700&display=swap');
+
+/* استایل‌های پایه */
+.root {
+    -fx-font-family: 'Sahel', 'Roboto', sans-serif;
+    -fx-base: #f8f8f8;
+    -fx-background: #ffffff;
+}
+
+/* استایل کلی دکمه‌ها */
+.button {
+    -fx-background-color: #4CAF50; /* سبز */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #3d8b40;
+}
+
+/* دکمه‌های خطر (حذف/انصراف) */
+.button-danger {
+    -fx-background-color: #f44336; /* قرمز */
+}
+
+.button-danger:hover {
+    -fx-background-color: #d32f2f;
+}
+
+/* استایل فیلدهای ورودی */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #4CAF50;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.3), 10, 0, 0, 0);
+}
+
+/* استایل لیبل‌ها */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E7D32; /* سبز تیره */
+}
+
+.label-error {
+    -fx-text-fill: #d32f2f; /* قرمز */
+    -fx-font-weight: bold;
+}
+
+/* استایل جدول‌ها */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #C8E6C9; /* سبز روشن */
+}
+
+/* استایل کارت منو */
+.menu-item-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-padding: 15px;
+}
+
+.menu-item-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+}
+
+/* استایل صفحه تسویه حساب */
+.checkout-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20px;
+    -fx-border-radius: 8px;
+}
+
+.total-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E7D32;
+}
+
+/* استایل ناوبری */
+.nav-bar {
+    -fx-background-color: #2E7D32;
+    -fx-padding: 10px 20px;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-border-width: 0;
+}
+
+.nav-button:hover {
+    -fx-text-fill: #C8E6C9;
+}
+
+/* استایل اسپینر (برای تعداد) */
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: white;
+}
+
+/* استایل دکمه‌های افزایش/کاهش تعداد */
+.quantity-button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+}
+
+/* استایل صفحه لاگین */
+.login-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 40px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* استایل اسکرول بار */
+.scroll-bar:vertical {
+    -fx-background-color: #f5f5f5;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 4px;
+}
+
+/* استایل دکمه بازگشت */
+.back-button {
+    -fx-graphic: url("back-arrow.png");
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+/* استایل ریسپانسیو برای صفحات مختلف */
+@media (max-width: 600px) {
+    .menu-item-card {
+        -fx-padding: 10px;
+    }
+
+    .button {
+        -fx-font-size: 12px;
+        -fx-padding: 6px 12px;
+    }
+}

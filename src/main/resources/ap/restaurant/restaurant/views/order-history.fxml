@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ap.restaurant.restaurant.controllers.OrderController"
+      spacing="20" style="-fx-padding: 20;" alignment="TOP_CENTER">
+
+    <Label text="تاریخچه سفارشات" styleClass="label-title"/>
+
+    <TableView fx:id="ordersTable" styleClass="table-view" prefHeight="250">
+        <columns>
+            <TableColumn fx:id="orderIdColumn" text="شماره سفارش" prefWidth="100"/>
+            <TableColumn fx:id="dateColumn" text="تاریخ سفارش" prefWidth="150"/>
+            <TableColumn fx:id="totalColumn" text="مبلغ کل" prefWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="وضعیت" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label text="جزئیات سفارش:" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="itemsTable" styleClass="table-view" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="itemNameColumn" text="آیتم" prefWidth="200"/>
+            <TableColumn fx:id="quantityColumn" text="تعداد" prefWidth="80"/>
+            <TableColumn fx:id="priceColumn" text="قیمت واحد" prefWidth="100"/>
+            <TableColumn fx:id="subtotalColumn" text="جمع" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Button text="بازگشت به منو" onAction="#returnToMenu" styleClass="button"/>
+</VBox>

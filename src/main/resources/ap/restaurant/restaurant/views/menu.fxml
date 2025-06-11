@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ap.restaurant.restaurant.controllers.MenuController"
+            style="-fx-padding: 10;">
+
+    <top>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
+            <Label text="منوی رستوران" styleClass="label-title"/>
+            <Button text="تاریخچه سفارشات" onAction="#viewOrderHistory" styleClass="button"/> <Button text="خروج از سیستم" onAction="#logout" styleClass="button-danger"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.5" style="-fx-padding: 10;">
+            <items>
+                <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 10;">
+                    <Label text="لیست غذاها" styleClass="label-title"/>
+                    <ListView fx:id="menuListView" prefHeight="400" prefWidth="300" styleClass="table-view"/>
+                    <Button text="افزودن به سبد خرید" onAction="#addToCart" styleClass="button"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 10;">
+                    <Label text="سبد خرید شما" styleClass="label-title"/>
+                    <ListView fx:id="cartListView" prefHeight="300" prefWidth="300" styleClass="table-view"/>
+                    <Label fx:id="totalLabel" styleClass="total-label"/>
+                    <Button text="تایید سفارش و تسویه حساب" onAction="#proceedToCheckout" styleClass="button"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
