@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ap.restaurant.restaurant.controllers.CheckoutController"
+      spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+
+    <Label text="تسویه حساب" style="-fx-font-size: 24; -fx-font-weight: bold;" styleClass="label-title"/>
+
+    <TableView fx:id="cartTable" prefHeight="300" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="itemNameColumn" text="آیتم" prefWidth="200"/>
+            <TableColumn fx:id="quantityColumn" text="تعداد" prefWidth="80"/>
+            <TableColumn fx:id="priceColumn" text="قیمت واحد" prefWidth="120"/>
+            <TableColumn fx:id="totalColumn" text="جمع" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="totalLabel" style="-fx-font-size: 18; -fx-font-weight: bold;" styleClass="total-label"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="تایید نهایی" onAction="#handleConfirmOrder"
+                style="-fx-font-size: 16; -fx-pref-width: 120;" styleClass="button"/>
+        <Button text="بازگشت به منو" onAction="#handleReturnToMenu"
+                style="-fx-font-size: 16; -fx-pref-width: 120;" styleClass="button"/>
+    </HBox>
+</VBox>

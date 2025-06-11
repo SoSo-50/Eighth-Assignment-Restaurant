@@ -1,12 +1,11 @@
 plugins {
   id 'java'
   id 'application'
-  id 'org.javamodularity.moduleplugin' version '1.8.12'
   id 'org.openjfx.javafxplugin' version '0.0.13'
   id 'org.beryx.jlink' version '2.25.0'
 }
 
-group 'AP.Restaurant'
+group 'ap.restaurant'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -14,11 +13,10 @@ repositories {
 }
 
 ext {
-  junitVersion = '5.10.2'
+  junitVersion = '5.9.2'
+  postgresqlVersion = '42.6.0'
+  jbcryptVersion = '0.4'
 }
-
-sourceCompatibility = '23'
-targetCompatibility = '23'
 
 tasks.withType(JavaCompile) {
   options.encoding = 'UTF-8'
@@ -26,22 +24,25 @@ tasks.withType(JavaCompile) {
 
 application {
   mainModule = 'ap.restaurant.restaurant'
-  mainClass = 'ap.restaurant.restaurant.HelloApplication'
+  mainClass = 'ap.restaurant.restaurant.HelloApplication' // اینجا باید با کلاس اصلی شما (HelloApplication) مطابقت داشته باشد
 }
 
 javafx {
-  version = '17.0.6'
+  version = '17.0.6' // مطمئن شوید با JDK شما (Java 17) سازگار است
   modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
+  implementation "org.postgresql:postgresql:${postgresqlVersion}"
+  implementation "org.mindrot:jbcrypt:${jbcryptVersion}"
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 test {
-useJUnitPlatform()}
+  useJUnitPlatform()
+}
 
 jlink {
   imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
